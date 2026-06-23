@@ -15,6 +15,9 @@ const ll INFll  = 0x3f3f3f3f3f3f3f3f;
 
 void solve()
 {
+    int n, m1, m2;
+    cin >> n >> m1 >> m2;
+
     
 
 

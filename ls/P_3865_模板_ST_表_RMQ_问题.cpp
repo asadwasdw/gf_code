@@ -12,9 +12,40 @@ const ll INFll  = 0x3f3f3f3f3f3f3f3f;
 
 //vector<vector<int>>adj(N);
 
-
+int b[N][20];
+int a[N];
+int lg2[N];
 void solve()
 {
+    int n, q;
+    cin >> n >> q;
+    
+    for(int i = 2; i <= n; i ++) {
+        lg2[i] = lg2[i >> 1] + 1;
+    }
+
+    for(int i = 1; i <= n; i ++) {
+
+        cin >> a[i];
+        b[i][0] = a[i];
+    }
+
+    for(int j = 1; j < 20; j ++ ) {
+        for(int i = 1; i <= n; i ++) {
+            b[i][j] = max(b[i][j - 1], b[min(n, i + (1 << (j - 1)))][j - 1]);
+        }
+    }
+
+
+    while(q --) {
+        int l, r;
+        cin >> l >> r;
+        int lg = lg2[r - l + 1];
+        // cout << l << " " << r << " " << lg << " "<<  b[r - (1 << lg) + 1][lg]<< " " << endl;
+        cout << max(b[l][lg], b[r - (1 << lg) + 1][lg]) << endl;
+    }
+
+
 
 
 

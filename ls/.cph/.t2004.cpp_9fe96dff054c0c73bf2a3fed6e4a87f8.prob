@@ -1,0 +1,1 @@
+{"name":"Local: t2004","url":"d:\\acm\\C++\\code\\ls\\t2004.cpp","tests":[{"id":1779627823769,"input":"4 10\n0234500067\n1034560500\n2045600671\n0000000089\n","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\acm\\C++\\code\\ls\\t2004.cpp","group":"local","local":true}

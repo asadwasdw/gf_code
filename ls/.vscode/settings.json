@@ -148,7 +148,7 @@
   "C_Cpp_Runner.useLinkTimeOptimization": false,
 
   "cph.general.defaultLanguage": "cpp",
-  "cph.general.defaultLanguageTemplateFileLocation": "/Users/gaofeng/Desktop/acm/C++/code/mybz.cpp",    // 这是你的模板文件路径
+  "cph.general.defaultLanguageTemplateFileLocation": "D://acm//C++//code//mybz.cpp",    // 这是你的模板文件路径
   "cph.general.firstTime": false,
   "cph.language.cpp.SubmissionCompiler": "GNU G++23 6.4.0",   // 使用 C++14 标准
   "cph.language.cpp.Args": "-std=c++23 -O2",

@@ -46,7 +46,7 @@ ll C(int n,int m){
 int g[N];
 signed main()
 {
-    init();
+    
     int n,m;
     cin>>n>>m;
 

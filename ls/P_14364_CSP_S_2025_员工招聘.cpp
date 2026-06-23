@@ -15,7 +15,7 @@ const ll INFll  = 0x3f3f3f3f3f3f3f3f;
 int n, m;
 string s;
 
-int c[N];
+ll c[N];
 void solve()
 {
     cin >> n >> m;
@@ -112,11 +112,11 @@ void solve3() {
 
     for(ll i = 1; i <= n; i ++) {
         for(ll j = 0; j <= i; j ++) {
-            ll num = min(i, ((i - 1) - j) + c[i] - 1 + 1);
+            ll num = min(i, ((i - 1) - j) + min(j, c[i] - 1) + 1);
             if(num > 0) dp[i][j] = (dp[i][j] + dp[i - 1][j] * num) % mod;
 
             if(j > 0) {
-                ll num = min(i, ((i - 1) - (j - 1)) + c[i] - 1 + 1); 
+                ll num = min(i, ((i - 1) - (j - 1)) + min(j - 1, c[i] - 1) + 1); 
                 ll num2 = i - num; // 总位置 i 减去录用位置，就是放弃位置
                 
                 if(num2 > 0) dp[i][j] = (dp[i][j] + dp[i - 1][j - 1] * num2) % mod;
@@ -187,11 +187,11 @@ void solve4() {
 
     for(ll i = 1; i <= n; i ++) {
         for(ll j = 0; j <= i; j ++) {
-            ll num = min(i, ((i - 1) - j) + c[i] - 1 + 1);
+            ll num = min(i, ((i - 1) - j) + min(j, c[i] - 1) + 1);
             if(num > 0) dp[i][j] = (dp[i][j] + dp[i - 1][j] * num) % mod;
 
             if(j > 0) {
-                ll num = min(i, ((i - 1) - (j - 1)) + c[i] - 1 + 1); 
+                ll num = min(i, ((i - 1) - (j - 1)) + min(j - 1, c[i] - 1) + 1); 
                 ll num2 = i - num; // 总位置 i 减去录用位置，就是放弃位置
                 
                 if(num2 > 0) dp[i][j] = (dp[i][j] + dp[i - 1][j - 1] * num2) % mod;
@@ -270,6 +270,70 @@ void solve5() {
 }
 
 
+// O(N^4) 显式容斥 DP 做法
+void solve6() {
+    fact[0] = 1;
+    for(int i = 1; i < N; i ++) fact[i] = fact[i - 1] * i % mod;
+
+    int n, m;
+    cin >> n >> m;
+    cin >> s;
+    for(int i = 1; i <= n; i ++) {
+        cin >> c[i];
+    }
+
+    // 预处理 a[j]
+    for(int j = 0; j <= n; j ++) {
+        a[j] = 0;
+        for(int i = 1; i <= n; i ++) {
+            if(c[i] <= j) a[j] ++;
+        }
+    }
+
+    vector<vector<vector<ll>>> g(n + 2, vector<vector<ll>>(n + 2, vector<ll>(n + 2, 0ll)));
+    g[0][0][0] = 1;
+
+    for(int i = 0; i < n; i ++) {
+        vector<vector<vector<ll>>> f(n + 2, vector<vector<ll>>(n + 2, vector<ll>(n + 2, 0ll)));
+        for(int j = 0; j <= i; j ++) {
+            for(int k = 0; k <= i; k ++) {
+                for(int l = 0; l <= k; l ++) {
+                    ll v = g[j][k][l];
+                    if(!v) continue;
+
+                    if(s[i] == '0') {
+                        f[j + 1][k][l] = (f[j + 1][k][l] + v) % mod;
+                    } else {
+                        // 决策 A
+                        f[j][k][l] = (f[j][k][l] + v) % mod;
+                        
+                        ll x = a[j] - k;
+                        if(x > 0) {
+                            // 决策 B (违例数 l 增加 1)
+                            f[j][k + 1][l + 1] = (f[j][k + 1][l + 1] + x * v) % mod;
+                            // 决策 C
+                            f[j + 1][k + 1][l] = (f[j + 1][k + 1][l] + x * v) % mod;
+                        }
+                    }
+                }
+            }
+        }
+        swap(g, f);
+    }
+
+    ll ans = 0;
+    for(int j = 0; j <= n - m; j ++) {
+        for(int k = 0; k <= n; k ++) {
+            for(int l = 0; l <= k; l ++) {
+                ll coeff = (l % 2 == 1) ? (mod - 1) : 1;
+                ans = (ans + g[j][k][l] * coeff % mod * fact[n - k]) % mod;
+            }
+        }
+    }
+    cout << ans << endl;
+}
+
+
 signed main()
 {
     ios::sync_with_stdio(false);
@@ -279,7 +343,7 @@ signed main()
     //cin>>t;
     for(int i=1;i<=t;i++){
         //printf("Case %d: ",i);
-        solve5();
+        solve6();
     }
     return 0;
 }

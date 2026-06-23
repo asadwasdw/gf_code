@@ -1,40 +1,58 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-typedef pair<int,int>PII;
-const int N=1e6+10;
-const int mod=998244353;
-const int INF  = 0x3f3f3f3f;
-const ll INFll  = 0x3f3f3f3f3f3f3f3f;
-#define endl "\n" 
-#define x first
-#define y second
 
-//vector<vector<int>>adj(N);
+int t;
+string s;
+int len, mn;
+int num[10];
 
-
-void solve()
+bool isp(int x)
 {
-
-
-
-
-
-
-
+if (x < 2) return 0;
+for (int i = 2;i * i <= x;i++)
+{
+if (x % i == 0) return 0;
+}
+return 1;
 }
 
-
-signed main()
+void dfs(int now)
 {
-    ios::sync_with_stdio(false);
-    cin.tie(0),cout.tie(0);
-    cout << setprecision(11) << fixed;
-    int t;t=1;
-    //cin>>t;
-    for(int i=1;i<=t;i++){
-        //printf("Case %d: ",i);
-        solve();
+    if (mn) return; // 你这得剪枝， 不然会tle
+
+    for (int i = 0;i <= 9;i++) {
+        num[now] = i;
+        int j = now + 1;
+        for (;j <= len;j++) {
+            if (num[j] == -1) break;
+        }
+        if (j <= len) {
+            dfs(j);
+        }
+        else {
+            int ans = 0;
+            for (int i = 1;i <= len;i++)  ans = ans * 10 + num[i];
+            if (isp(ans) && !mn) mn = ans;
+        }
     }
-    return 0;
+    num[now] = -1; // 回溯
+}
+
+int main()
+{
+cin >> t;
+while (t--)
+{
+mn = 0;
+cin >> s;
+len = s.size();
+for (int i = 0;i < len;i++)
+{
+if (s[i] == '*') num[i + 1] = -1;
+else num[i + 1] = s[i] - '0';
+}
+dfs(0);
+cout << (mn?mn:-1) << "\n";
+}
+return 0;
 }

@@ -1,58 +1,85 @@
 #include<bits/stdc++.h>
 using namespace std;
-int T;
-int N,M;
-int a[20][20];
-int vis[20][20];
-int ans=0;
-int dx[]={-1,-1,-1,0,0,1,1,1};
-int dy[]={-1,0,1,-1,1,-1,0,1};
-void dfs(int x,int y,int sum){
-    // cout << x << " " << y << endl;
-    if(x==N +1){ // 1
-    	ans=max(ans,sum);
+typedef long long ll;
+typedef pair<int,int>PII;
+const int N=1e3+10;
+const int mod=998244353;
+const int INF  = 0x3f3f3f3f;
+const ll INFll  = 0x3f3f3f3f3f3f3f3f;
+#define endl "\n" 
+#define x first
+#define y second
+
+//vector<vector<int>>adj(N);
+
+int a[N][N];
+bool st[N][N];
+int n, m;
+int ans = 0;
+void dfs(int x, int y, int sum) {
+    if(y == m + 1) {
+        x ++;
+        y = 1;
+    }
+    if(x == n + 1) {
+        ans = max(ans, sum);
+        // cout << sum << endl;
+        // for(int i = 1; i <= n; i ++) {
+        //     for(int j = 1; j <= m; j ++) {
+        //         cout << st[i][j] << " \n"[j == m];
+        //     }
+        // }
+
         return;
     }
-    int nextX=x;
-    int nextY=y+1;
-    if (nextY==M + 1){ // 3
-        nextX=x+1;
-        nextY=1;
-    }
-    dfs(nextX,nextY,sum);
-    if(vis[x][y]==0){
-        sum+=a[x][y];
-        vector<pair<int, int>> zuobiao;
-        for(int i=0;i<8;i++){ // 2
-            int nx=x+dx[i];
-            int ny=y+dy[i];
-            if(nx>=1 && nx<=N && ny>=1 && ny<=M){
-                vis[nx][ny]++;
-                zuobiao.push_back({nx,ny});
-            }
-        }
-        dfs(nextX,nextY,sum);
-        sum-=a[x][y];
-        for(auto& xy : zuobiao){
-            vis[xy.first][xy.second]--;
+
+    bool ky = true;
+
+    for(int i = -1; i <= 1; i ++) {
+        for(int j = -1; j <= 1; j ++) {
+            if(st[x + i][y + j]) ky = false;
         }
     }
+    
+    if(ky) {
+        st[x][y] = true;
+        dfs(x, y + 1, sum + a[x][y]);
+        st[x][y] = false;
+    }
+
+    dfs(x, y + 1, sum);
+
 }
-int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
-    cin>>T;
-    while(T--){
-        cin>>N>>M;
-        for(int i=1;i<=N;i++){
-            for(int j=1;j<=M;j++){
-                cin>>a[i][j];
-            }
+
+
+void solve()
+{
+    ans = 0;
+    cin >> n >> m;
+
+    for(int i = 1; i <= n; i ++) {
+        for(int j = 1; j <= m; j ++) {
+            cin >> a[i][j];
         }
-        memset(vis,0,sizeof(vis));
-        ans=0;
-        dfs(1,1,0);
-        cout<<ans<<endl;
+    }
+
+    dfs(1, 1, 0);
+
+    cout << ans << endl;
+
+}
+
+
+signed main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(0),cout.tie(0);
+    cout << setprecision(11) << fixed;
+    int t;t=1;
+    cin>>t;
+    for(int i=1;i<=t;i++){
+        //printf("Case %d: ",i);
+        solve();
     }
     return 0;
 }
