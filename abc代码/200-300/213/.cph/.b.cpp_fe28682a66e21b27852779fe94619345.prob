@@ -1,0 +1,1 @@
+{"name":"Local: b","url":"c:\\Users\\gf\\Desktop\\学习\\abc代码\\213\\b.cpp","tests":[{"id":1673443265976,"input":"6\n1 123 12345 12 1234 123456\n","output":"3\n"},{"id":1673443275393,"input":"5\n3 1 4 15 9\n","output":"5\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\学习\\abc代码\\213\\b.cpp","group":"local","local":true}

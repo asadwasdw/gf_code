@@ -1,0 +1,1 @@
+{"name":"Local: c","url":"c:\\Users\\gf\\Desktop\\xx\\dam\\C++\\Competition\\2019湖南\\c.cpp","tests":[{"id":1727756425342,"input":"3 2\n1 1 2\n2 3\n1 2\n1 1000000\n1","output":"18\n69\n317072014"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\xx\\dam\\C++\\Competition\\2019湖南\\c.cpp","group":"local","local":true}

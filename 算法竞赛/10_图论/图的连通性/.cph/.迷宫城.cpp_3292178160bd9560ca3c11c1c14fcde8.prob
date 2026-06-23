@@ -1,0 +1,1 @@
+{"name":"Local: 迷宫城","url":"c:\\Users\\gf\\Desktop\\xx\\dam\\C++\\算法竞赛\\10 图论\\图的连通性\\迷宫城.cpp","tests":[{"id":1691204948490,"input":"3 3\n1 2\n2 3\n3 1\n3 3\n1 2\n2 3\n3 2\n0 0","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\xx\\dam\\C++\\算法竞赛\\10 图论\\图的连通性\\迷宫城.cpp","group":"local","local":true}

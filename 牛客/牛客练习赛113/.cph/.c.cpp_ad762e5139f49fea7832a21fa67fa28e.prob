@@ -1,0 +1,1 @@
+{"name":"Local: c","url":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\牛客\\牛客练习赛113\\c.cpp","tests":[{"id":1688730281367,"input":"3 3 1 5 6\n2 3 4","output":""},{"id":1688730291164,"input":"4 4 1 7 3\n2 3 2 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\牛客\\牛客练习赛113\\c.cpp","group":"local","local":true}
