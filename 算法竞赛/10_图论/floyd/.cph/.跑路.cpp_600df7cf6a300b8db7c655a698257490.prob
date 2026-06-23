@@ -1,0 +1,1 @@
+{"name":"Local: 跑路","url":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\算法竞赛\\10 图论\\floyd\\跑路.cpp","tests":[{"id":1681557731843,"input":"4 4\n1 1\n1 2\n2 3\n3 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\算法竞赛\\10 图论\\floyd\\跑路.cpp","group":"local","local":true}

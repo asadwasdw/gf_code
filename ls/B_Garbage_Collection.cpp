@@ -1,0 +1,53 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef pair<int,int>PII;
+const int N=1e6+10;
+const int mod=998244353;
+const int INF  = 0x3f3f3f3f;
+const ll INFll  = 0x3f3f3f3f3f3f3f3f;
+#define endl "\n" 
+
+vector<vector<PII>>adj(N);
+ll q[N], r[N];
+int ans[N];
+
+void solve()
+{
+    int n, m; cin >> n;
+    for(int i = 1; i <= n; i ++) {
+        cin >> q[i] >> r[i];
+    }
+    cin >> m;
+
+    for(int i = 1; i <= m; i ++) {
+        ll x, day; cin >> x >> day;
+        // adj[x].push_back({day, i});
+
+        ll d = day % q[x];
+        d = (r[x] - d + q[x]) % q[x];
+        cout << day + d << endl;
+    }
+
+
+
+
+
+
+
+
+}
+
+
+signed main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(0),cout.tie(0);
+    cout << setprecision(11) << fixed;
+    int t;t=1;
+    //cin>>t;
+    for(int i=1;i<=t;i++){
+        //printf("Case %d: ",i);
+        solve();
+    }
+}
