@@ -1,44 +1,23 @@
 #include<bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-typedef pair<int,int>PII;
-const int N=1e6+10;
-const int mod=998244353;
-const int INF  = 0x3f3f3f3f;
-const ll INFll  = 0x3f3f3f3f3f3f3f3f;
-#define endl "\n" 
-#define x first
-#define y second
+const int N = 1e6 + 10;
+int a[N];
 
-//vector<vector<int>>adj(N);
-
-
-void solve()
-{
-	int a, b;
-	cin >> a >> b;
-	if(a == b) {
-		cout << "Accepted";
-	} else {
-		cout << "Unaccepted";
+int main() {
+	int n;
+	cin >> n;
+	map<int,int> m;
+	a[1] = 1;
+	m[a[1]] ++;
+	for(int i = 2; i <= n; i ++) {
+		if(a[i - 1] - i >= 1 &&  m[a[i - 1] - i] == 0) {
+			a[i] = a[i - 1] - i; 
+		} else {
+			a[i] = a[i - 1] + i;
+		}
+		m[a[i]] ++;
 	}
-
-
-
-
-}
-
-
-signed main()
-{
-	ios::sync_with_stdio(false);
-	cin.tie(0),cout.tie(0);
-	cout << setprecision(11) << fixed;
-	int t;t=1;
-	//cin>>t;
-	for(int i=1;i<=t;i++){
-		//printf("Case %d: ",i);
-		solve();
-	}
+	sort(a + 1, a + n + 1);
+	for(int i = 1; i <= n; i ++) cout << a[i] << " ";
 	return 0;
 }
