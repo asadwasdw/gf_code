@@ -65,7 +65,7 @@ void solve()
         if(t[x] == k + 1 && t[y] == k + 1) {
             merge(x, y);
         } else {
-            if(t[x] > t[y]) swap(x, y); // 保证x早打击
+            if(t[x] > t[y]) swap(x, y); // 保证x早打击  
             adj[x].push_back(y);
         }
     }
