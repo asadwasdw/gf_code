@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "iostream": "cpp",
-        "numbers": "cpp",
-        "random": "cpp",
-        "array": "cpp"
-    }
-}
