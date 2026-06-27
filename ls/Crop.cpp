@@ -2,7 +2,7 @@
 using namespace std;
 typedef long long ll;
 typedef pair<int,int>PII;
-const int N=2e6+10;
+const int N=1e6+10;
 const int mod=998244353;
 const int INF  = 0x3f3f3f3f;
 const ll INFll  = 0x3f3f3f3f3f3f3f3f;
@@ -12,37 +12,33 @@ const ll INFll  = 0x3f3f3f3f3f3f3f3f;
 
 //vector<vector<int>>adj(N);
 
-long long a[N];
+char a[110][110];
 
 void solve()
 {
-    int n;
-    cin >> n;
+    int n, m;
+    cin >> n >> m;
+    int l = INF, r = - INF, u = INF, d = - INF;
+
     for(int i = 1; i <= n; i ++) {
-        cin >> a[i];
-        a[i + n] = a[i];
-    }
-
-    deque<int> q;
-    long long ans = 0;
-    for(int i = 1; i <= n * 2; i ++) {
-        while(q.size() && i - q.front() > n / 2) q.pop_front();
-        
-        if(q.size()) {
-            // cout << i << " " << q.front() << " " << a[i] + i + a[q.front()] - q.front() << endl;
-            ans = max(ans, a[i] + i + a[q.front()] - q.front());
+        for(int j = 1; j <= m; j ++) {
+            cin >> a[i][j];
+            if(a[i][j] == '#') {
+                l = min(j, l);
+                r = max(j, r);
+                u = min(i, u);
+                d = max(d, i);
+            }
         }
-        
-        while(q.size() && a[i] - i >= a[q.back()] - q.back()) q.pop_back();
-        q.push_back(i);
     }
-    cout << ans << endl;
+    // cout << l << " " << r << 
 
-
-
-
-
-
+    for(int i = u; i <= d; i ++) {
+        for(int j = l; j <= r; j ++) {
+            cout << a[i][j];;
+        }
+        cout << endl;
+    }
 
 
 

@@ -1,8 +1,14 @@
 import os
 import re
+import platform
 
-mac_path = "/Users/gaofeng/Desktop/acm/C++/code/mybz.cpp"
-base_dir = "/Users/gaofeng/Desktop/acm/C++/code"
+# 自动根据操作系统判断路径
+if platform.system() == "Windows":
+    template_path = r"d:\\acm\\C++\\code\\mybz.cpp"
+    base_dir = r"d:\acm\C++\code"
+else:
+    template_path = "/Users/gaofeng/Desktop/acm/C++/code/mybz.cpp"
+    base_dir = "/Users/gaofeng/Desktop/acm/C++/code"
 
 count = 0
 for root, dirs, files in os.walk(base_dir):
@@ -15,7 +21,7 @@ for root, dirs, files in os.walk(base_dir):
                 
                 new_content = re.sub(
                     r'("cph\.general\.defaultLanguageTemplateFileLocation"\s*:\s*)"[^"]+"',
-                    r'\1"/Users/gaofeng/Desktop/acm/C++/code/mybz.cpp"',
+                    fr'\1"{template_path}"',
                     content
                 )
                 

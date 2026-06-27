@@ -12,37 +12,42 @@ const ll INFll  = 0x3f3f3f3f3f3f3f3f;
 
 //vector<vector<int>>adj(N);
 
-int a[N];
+struct op{
+    int x, y;
+    char c;
+}o[N];
 
 void solve()
 {
-    int n;
-    cin >> n;
-    string s;
-    cin >> s;
+    int n, m, q;
+    cin >> n >> m >> q;
+    vector<vector<int>> a(n + 10, vector<int> (m + 10, 0));
+    o[0].c = 'A';
+    for(int i = 1; i <= q; i ++) {
+        cin >> o[i].x >> o[i].y >> o[i].c;
+        a[o[i].x][o[i].y] = i;
+    }
 
-    assert(n == s.size());
-    assert(n <= 15);
-
-
-
-    for(int i = 1; i <= n; i ++) {
-        a[i] = s[i - 1] - '0';
-        if(i >= 2 && a[i] != 1 && a[i - 1] != 1) {
-            cout << "-1";
-            return;
+    for(int i = n; i >= 1; i --) {
+        for(int j = m; j >= 1; j --) {
+            a[i][j] = max({a[i + 1][j], a[i][j + 1], a[i][j]});
         }
     }
 
-    ll cnt = 0;
-
-	
-
-    for(int i = n; i > 1; i --)  {
-        cnt = (cnt + 1) * a[i];
-        cnt %= mod;
+    for(int i = 1; i <= n; i ++) {
+        for(int j = 1; j <= m; j ++) {
+            // cout << a[i][j] << " \n"[j == m];
+            cout << o[a[i][j]].c;
+        }
+        cout << endl;
     }
-    cout << cnt << endl;
+
+
+
+
+
+
+
 }
 
 

@@ -13,39 +13,18 @@ const ll INFll  = 0x3f3f3f3f3f3f3f3f;
 //vector<vector<int>>adj(N);
 
 
-vector<int> ans;
-
-bool check(int x) {
-    if(x < 2) return false;
-    for(int i = 2; i * i <= x; i ++) {
-        if(x % i == 0) return false;
-    }
-
-    return true;
-}
-int n;
-
-void dfs(int id, int res) {
-    // cerr << id << " "<< res << endl;
-    if(res && !check(res)) return;
-    if(id > n) {
-        cout << res << endl;
-        return;
-    }
-
-    for(int i = 1; i <= 9; i ++) {
-        dfs(id + 1, res * 10 + i);
-    }
-}
-
-
 void solve()
 {
-    cin >> n;
+    string s;
+    cin >> s;
 
-    dfs(1, 0);
-
-
+    int e = 0, w = 0;
+    for(auto t : s) {
+        if(t == 'E') e ++;
+        else w ++;
+    }
+    if(e > w) cout << "East";
+    else cout << "West"; 
 
 
 
