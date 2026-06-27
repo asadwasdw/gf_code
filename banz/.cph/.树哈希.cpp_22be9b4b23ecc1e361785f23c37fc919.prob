@@ -1,1 +1,0 @@
-{"name":"Local: 树哈希","url":"c:\\Users\\gf\\Desktop\\xx\\dam\\C++\\banz\\树哈希.cpp","tests":[{"id":1712643515890,"input":"4 \n4 0 1 1 2 \n4 2 0 2 3 \n4 0 1 1 1 \n4 0 1 2 3","output":"1\n1\n3\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\xx\\dam\\C++\\banz\\树哈希.cpp","group":"local","local":true}

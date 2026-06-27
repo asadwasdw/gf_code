@@ -1,2 +1,11 @@
 .vscode/
 github维护日志.md
+.cph/
+*.exe
+*.bin
+*.out
+*.o
+*.a
+*.dylib
+*.so
+.DS_Store

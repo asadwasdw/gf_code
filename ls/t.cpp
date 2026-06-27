@@ -1,44 +1,54 @@
 #include<bits/stdc++.h>
 using namespace std;
-const int N = 1e6 + 10;
-// int a[N], b[N];
-struct pre
-{
-	int a, b;
-}p[N];
+typedef long long ll;
+typedef pair<int,int>PII;
+const int N=1e6+10;
+const int mod=998244353;
+const int INF  = 0x3f3f3f3f;
+const ll INFll  = 0x3f3f3f3f3f3f3f3f;
+#define endl "\n" 
+#define x first
+#define y second
 
-bool cmp(pre x, pre y) {
-    if (x.a != y.a) return x.a < y.a;  // 按考试分数升序
-    return x.b < y.b;                  // 分数相同按才艺分升序
-}
-int main() {
-	int n, k, s;
-	cin >> n >> k >> s;
+//vector<vector<int>>adj(N);
+
+int a[N];
+void solve()
+{
+	int n;
+	cin >> n;
+	ll sum = 0;
 	for(int i = 1; i <= n; i ++) {
-		cin >> p[i].a >> p[i].b;
+		cin >> a[i];
+		sum += a[i];
 	}
-	sort(p + 1, p + n + 1, cmp);
-	map<int,int> m;
-	int cnt = 0;
-	while(k --) {
-		int last = 0; //上一个人的分数
-		for(int i = 1; i <= n; i ++) {
-			if(p[i].a < 175) continue;
-			if(m[i]) continue;
-			if(p[i].a == last && p[i].b >= s) {
-				cnt++;
-				m[i] = 1;
-				// cout << p[i].a << " " << p[i].b << endl;
-			} else if(p[i].a > last) {
-				last = p[i].a;
-				cnt ++;
-				m[i] = 1;
-				// cout << p[i].a << " " << p[i].b << endl;
-			}
+	ll res = 0;
+	cin >> res;
+	for(int i = 1; i <= n; i ++) {
+		if(sum - 2 * a[i] == res) {
+			cout << i << " ";
 		}
 	}
-	cout << cnt << endl;
+	cout << endl;
 
 
+
+
+
+
+}
+
+
+signed main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(0),cout.tie(0);
+	cout << setprecision(11) << fixed;
+	int t;t=1;
+	//cin>>t;
+	for(int i=1;i<=t;i++){
+		//printf("Case %d: ",i);
+		solve();
+	}
 	return 0;
 }

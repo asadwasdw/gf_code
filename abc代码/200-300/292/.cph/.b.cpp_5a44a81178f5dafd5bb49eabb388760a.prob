@@ -1,1 +1,0 @@
-{"name":"Local: b","url":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\abc代码\\292\\b.cpp","tests":[{"id":1678006827990,"input":"3 9\n3 1\n3 2\n1 2\n2 1\n3 1\n3 2\n1 2\n3 2\n3 3\n","output":"No\nNo\nYes\nNo\nYes\nNo\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\abc代码\\292\\b.cpp","group":"local","local":true}

@@ -1,1 +1,0 @@
-{"name":"Local: b","url":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\赛事\\2023 广东省大学生程序设计竞赛\\b.cpp","tests":[{"id":1688042874306,"input":"2\n5\n3 2 4 1 100\n3\n1 3\n2 4\n5 5\n5\n7 3 4 2 2\n3\n1 4\n2 3\n4 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\赛事\\2023 广东省大学生程序设计竞赛\\b.cpp","group":"local","local":true}

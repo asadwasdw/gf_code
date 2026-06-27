@@ -1,1 +1,0 @@
-{"name":"Local: e","url":"c:\\Users\\gf\\Desktop\\xx\\dam\\C++\\Competition\\2024成都\\e.cpp","tests":[{"id":1730798534797,"input":"2\n3 2\n1 1\n2 3\n1 2\n5 3\n1 1 2 2\n4 5\n2 4\n2 3","output":"6\n5\n14\n13\n15"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\xx\\dam\\C++\\Competition\\2024成都\\e.cpp","group":"local","local":true}

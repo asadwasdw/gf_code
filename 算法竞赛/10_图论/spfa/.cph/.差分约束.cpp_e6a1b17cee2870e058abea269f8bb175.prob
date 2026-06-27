@@ -1,1 +1,0 @@
-{"name":"Local: 差分约束","url":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\算法竞赛\\10 图论\\spfa\\差分约束.cpp","tests":[{"id":1681695273175,"input":"3 3\n1 2 3\n2 3 -2\n1 3 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\算法竞赛\\10 图论\\spfa\\差分约束.cpp","group":"local","local":true}

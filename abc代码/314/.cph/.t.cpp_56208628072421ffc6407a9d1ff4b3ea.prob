@@ -1,1 +1,0 @@
-{"name":"Local: t","url":"c:\\Users\\gf\\Desktop\\xx\\dam\\C++\\abc代码\\314\\t.cpp","tests":[{"id":1692002655314,"input":"3 14\n100 2 5 9\n50 4 1 2 4 8\n70 5 2 4 2 8 8","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\xx\\dam\\C++\\abc代码\\314\\t.cpp","group":"local","local":true}
