@@ -1,1 +1,0 @@
-{"name":"Local: bf","url":"c:\\Users\\gf\\Desktop\\对标\\文件操作\\bf.cpp","tests":[{"id":1709546589642,"input":"1 3 3\n3\nA 1\nC 9\nC 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\对标\\文件操作\\bf.cpp","group":"local","local":true}

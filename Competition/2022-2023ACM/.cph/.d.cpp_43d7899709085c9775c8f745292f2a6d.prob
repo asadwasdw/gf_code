@@ -1,1 +1,0 @@
-{"name":"Local: d","url":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\组队赛\\2022-2023ACM\\d.cpp","tests":[{"id":1681715707969,"input":"5 2 1\nY N\nN N\nY N\nN Y\nY Y","output":"Y N\nN N\nY Y\nN Y\nY Y"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\组队赛\\2022-2023ACM\\d.cpp","group":"local","local":true}

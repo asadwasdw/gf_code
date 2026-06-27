@@ -1,1 +1,0 @@
-{"name":"Local: d2","url":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\abc代码\\305\\d2.cpp","tests":[{"id":1686803912962,"input":"7\n0 240 720 1320 1440 1800 2160\n3\n480 1920\n720 1200\n0 2160\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\abc代码\\305\\d2.cpp","group":"local","local":true}

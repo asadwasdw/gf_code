@@ -1,1 +1,0 @@
-{"name":"Local: c","url":"c:\\Users\\gf\\Desktop\\学习\\代码\\思维训练\\23.2.8\\c.cpp","tests":[{"id":1675928984519,"input":"2\n4 3\n1 2","output":"3 3 4 4 4 4 4 4 5 5 5 5 \n1 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\学习\\代码\\思维训练\\23.2.8\\c.cpp","group":"local","local":true}

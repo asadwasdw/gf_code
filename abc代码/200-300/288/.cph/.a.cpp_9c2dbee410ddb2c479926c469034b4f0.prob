@@ -1,1 +1,0 @@
-{"name":"Local: a","url":"c:\\Users\\gf\\Desktop\\学习\\代码\\abc代码\\288\\a.cpp","tests":[{"id":1675512055361,"input":"4\n3 5\n2 -6\n-5 0\n314159265 123456789","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\学习\\代码\\abc代码\\288\\a.cpp","group":"local","local":true}

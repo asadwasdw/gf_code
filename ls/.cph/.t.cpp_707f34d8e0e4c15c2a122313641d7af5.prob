@@ -1,1 +1,0 @@
-{"name":"Local: t","url":"/Users/gaofeng/Desktop/acm/C++/code/ls/t.cpp","tests":[{"id":1778744187364,"input":"10 2 90\n203 0\n169 91\n175 88\n175 0\n175 90\n189 0\n189 0\n189 95\n189 89\n256 100","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/gaofeng/Desktop/acm/C++/code/ls/t.cpp","group":"local","local":true}

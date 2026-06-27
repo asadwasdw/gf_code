@@ -1,1 +1,0 @@
-{"name":"Local: Rank","url":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\算法竞赛\\10 图论\\floyd\\Rank.cpp","tests":[{"id":1681630457166,"input":"3\n3 3\n1 2\n1 3\n2 3\n3 2\n1 2\n2 3\n4 2\n1 2\n3 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\gf\\Desktop\\学习\\代码\\C++\\算法竞赛\\10 图论\\floyd\\Rank.cpp","group":"local","local":true}
